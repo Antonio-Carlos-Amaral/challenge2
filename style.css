@@ -1,0 +1,659 @@
+/**********************************/
+/*                                */
+/***      corpo do jogo         ***/
+/***   TELA-1  INICIAL          ***/
+/***   TELA-2  ADICIONA PALAVRA ***/
+/***   TELA-3  TELA DA FORCA    ***/ 
+/*                                */
+/**********************************/
+
+
+/****************************************************************/
+/**                                                            **/
+/**                     configuração para desktop               */ 
+/**                                                            **/
+/****************************************************************/
+
+body{
+  min-width: 800px;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  background: #F3F5FC;
+}
+
+/**********************************/
+/*                                */
+/***   botao azul TELA-1        ***/
+/*                                */
+/**********************************/
+
+.btn-iniciar {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 24px;  
+  position: absolute;
+  width: 270px;
+  height: 67px;
+  right: -310px;
+  top: 15rem;  
+  background: #0A3871;
+  border-radius: 24px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 22px;
+  display: flex;
+  justify-content: center;
+  color: #FFFFFF;
+}
+
+/**********************************/
+/*                                */
+/*** botao branco TELA-1        ***/
+/*                                */
+/**********************************/
+
+.btn-palavra{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 24px;
+  position: absolute;
+  width: 280px;
+  height: 67px;
+  left: 1.2rem;
+  top: 28rem; 
+  width: 270px;
+  height: 67px;
+  left: 40px;
+  top: 20rem;
+  border: 1px solid #0A3871;
+  box-sizing: border-box;
+  border-radius: 24px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  display: flex;
+  justify-content: center;
+  color: #0A3871;
+  }
+
+/**********************************/
+/*                                */
+/***   completa logo a__FORCA   ***/
+/*                                */
+/**********************************/
+
+h1 {
+  position: absolute;
+  color: #0A3871;
+  font-family: 'Inter', sans-serif;
+  width: 200px;
+  height: 30px;
+  top: 67px;
+  text-align: center;
+  left: 28px;
+  font-size: 20px;
+}
+
+.sublinhado{
+  position: relative;
+  display:flex;
+  top: 1000px;
+  left: 250px;
+}
+
+.desenharLinhas{
+  border-bottom: solid 2px #0A3871;
+  width: 10px;
+  margin: 5px;
+}
+
+.esconderLetra{
+  display: none;
+  font-size: 18px;
+}
+
+/**********************************/
+/*                                */
+/*** define area p nova palavra ***/
+/*             TELA-2             */
+/**********************************/
+
+  .text-input {
+    position: absolute;
+    width: 400px;
+    height: auto;
+    left: 2.5rem;
+    top: 200px;  
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    justify-content: baseline;
+    color: #0A3871;
+    background: transparent;
+    border: none;
+    text-transform:uppercase;
+}
+
+  ::placeholder { 
+    color: #0A3871; 
+    text-transform:lowercase;
+}
+  
+  .text-input:focus { 
+    border: none;
+    outline: none;
+}
+
+/**********************************/
+/*                                */
+/***   Define area para o logo  ***/
+/*                                */
+/**********************************/
+
+.logo {
+  position: absolute;
+  left: 50px;
+  right: 37.43%;
+  top: 50px;
+  bottom: 0%;
+  width: 50px;
+  height:50px;
+}
+
+/**********************************/
+/*                                */
+/*** posicão botoes nova palavra **/
+/*               TELA-2           */
+/**********************************/
+
+ .palavra-nova {
+  position: absolute;
+  left: 20rem;
+ }
+
+/**********************************/
+/*                                */
+/***  Define area para o logo ! ***/
+/*               TELA-2           */
+/**********************************/
+
+.img-alerta {
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+}
+
+/**********************************/
+/*                                */
+/***  Define area para o max 8  ***/
+/*            TELA-2              */
+/**********************************/
+
+ label {
+  flex-direction: row;
+  position: static;
+  width: 300px;
+  height: 18px;
+  left: 24px;
+  top: 0px;
+  padding-left: 25px;
+  font-weight: 600;  
+  font-family: Inter;
+  font-style: normal;
+  font-size:18px;
+  line-height: 100%;
+  color: #495057;
+ }
+
+/**********************************/
+/*                                */
+/***  posiciona logo max 8      ***/
+/*             TELA-2             */
+/**********************************/
+
+.form-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px; 
+  position: absolute;
+  width: auto;
+  height: 10px;
+  left: 30px;
+  top: 29rem;
+  color: darkgreen;
+ }
+
+/**********************************/
+/*                                */
+/***   define botões tela jogo  ***/
+/*            TELA-3              */
+/**********************************/
+
+.botoes-div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;  
+  position: relative;
+  width: 680px;
+  height: 67px;
+  right: 13px;
+  top: 490px;
+ }
+
+/**********************************/
+/*                                */
+/***   botões azul tela jogo    ***/
+/*                TELA-3          */
+/**********************************/
+
+.btn-azul {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 24px;
+  position: static;
+  width: 328px;
+  height: 67px;
+  left: -100px;
+  top: 300px;
+  background: #0A3871;
+  border-radius: 24px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 24px;
+  flex-grow: 0;
+  color: #FFFFFF;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 19px;
+  justify-content: center; 
+}
+
+/**********************************/
+/*                                */
+/***   botão branco tela jogo   ***/
+/*            TELA-3              */
+/**********************************/
+
+.btn-branco {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 24px;
+  position: static;
+  width: 328px;
+  height: 67px;
+  left: 352px;
+  top: 0px;
+  background: #D8DFE8;
+  border: 1px solid #0A3871;
+  box-sizing: border-box;
+  border-radius: 24px;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin: 0px 24px;
+  color: #0A3871;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 19px;
+  justify-content: center;
+}
+
+/**********************************/
+/*                                */
+/*** define area canvas e  forca **/
+/*           TELA-3               */
+/**********************************/
+
+.canvas {
+  width: 800px;
+  height:600px;
+  margin-left: 65px;
+}
+
+#forca {
+  width: 800px;
+  height:600px;
+  bottom: 10px;
+  margin-left: 100px;
+}
+
+/**********************************/
+/*                                */
+/*** posicão botões tela inicial **/
+/*            TELA-1              */
+/**********************************/
+
+ .botoes-home {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  left:32rem;
+ }
+
+/**********************************/
+/*                                */
+/*** posicão botões tela do jogo **/
+/*            TELA-3              */
+/**********************************/
+
+.botoes-div-canvas {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  position: relative;
+  left:15rem;
+  bottom: 110px;
+}
+
+/**********************************/
+/*                                */
+/*** posicão creditos rodapé     **/
+/*                                */
+/**********************************/
+
+.credits {
+    position: absolute;
+    top: 550px;
+    left:  425px;
+    text-align: center;
+    color: black;
+}
+
+/************************************************************************************************************************************************/
+/**                                                                                                                                            **/
+/**                                                         configuração para tablet                                                           **/ 
+/**                                                                                                                                            **/
+/************************************************************************************************************************************************/
+/***                                                 Portrait tablet to landscape and desktop                                                 ***/
+/************************************************************************************************************************************************/
+
+@media (min-width: 481px) and (max-width: 796px) {
+
+/***************************************************************/
+/**                                                           **/ 
+/**                      TELA-1                               **/
+/**                                                           **/ 
+/***************************************************************/
+
+  .logo{
+    left: 40px;
+    right: 37.43%;
+    top: 40px;
+    bottom: 0%;
+    width: 50px;
+    height: 50px;
+  } 
+
+  .botoes-home{
+    top: 16rem;
+    left: 12.2rem;
+  }
+  .btn-palavra{
+    width: 270px;
+    height: 67px;
+    top:7rem;
+    left:0.7rem;
+    font-size: 22px;
+    line-height: 20px;
+  }
+  .btn-iniciar{
+    width: 279px;
+    height: 67px;
+    top: 0;
+    left:0.7rem;
+    font-size: 22px;
+    line-height: 20px;
+  }
+
+
+.credits {
+    position: absolute;
+    top: 500px;
+    left:  100px;
+    text-align: center;
+    color: black;
+  }
+
+/***************************************************************/
+/**                                                           **/ 
+/**                      TELA-2                               **/
+/**                                                           **/ 
+/***************************************************************/
+
+  .btn-azul {
+    width: 230px;
+    height: 60px;
+    left: 5px;
+    font-size: 18px;
+    line-height: 20px;
+    padding: auto;
+  }
+
+  .btn-branco {
+    width: 230px;
+    height: 60px;
+    left: 10px;
+    font-size: 18px;
+    line-height: 20px;
+  }
+  
+  label {
+    left: 100px;
+    font-size:18px;
+  }
+
+/****************************************/
+/*                                      */
+/*** posicão elementos da nova palavra **/
+/*               TELA-2                 */
+/****************************************/
+
+ .palavra-nova {
+    position: relative;
+    bottom: 60px;
+    left: 100px;
+ }
+
+
+
+/***************************************/
+/*                                     */
+/*** area de input da nova palavra    **/
+/*                                     */ 
+/***************************************/
+
+.text-input {
+    width: 550;
+    height: auto;
+    left: 2rem;
+    top: 180px;
+    font-size:22px;
+}
+
+/***************************************************************/
+/**                                                           **/ 
+/**                      TELA-3                               **/
+/**       Area do canvas da forca e botões                    **/ 
+/***************************************************************/
+
+.canvas {
+    width: 600px;
+    height:700px;
+    margin-left: -10px;
+    top: 200px;
+}
+
+#forca {
+    width: 600px;
+    height:700px;
+    margin-left: 0px;
+}
+
+.botoes-div-canvas {
+    width: 680px;
+    height: 67px;
+    left: 100px;
+    bottom: 250px;
+}
+
+}
+
+/************************************************************************************************************************************************/
+/**                                                                                                                                            **/
+/**                                                         configuração para smartfone                                                        **/ 
+/**                                                                                                                                            **/
+/************************************************************************************************************************************************/
+/***                                                      Portrait & landscape para smartfone                                                 ***/
+/************************************************************************************************************************************************/
+//**@media (min-width: 320px) and (max-width: 480px) {    **//
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {    
+
+
+ //** @media screen and (max-width:320px) { **//
+
+body {
+    min-width: 320px;
+    min-height: 480px;
+}
+  
+/***************************************************************/
+/**                                                           **/ 
+/**                      TELA-1                               **/
+/**                                                           **/ 
+/***************************************************************/
+
+.logo {
+    left: 40px;
+    right: 37.43%;
+    top: 40px;
+    bottom: 0%;
+    width: 50px;
+    height: 50px;
+} 
+
+.btn-palavra {
+    position: relative;
+    width: 100px;
+    height: 67px;
+    top: 7rem;
+    left:50px;
+    font-size: 22px;
+}
+  
+.btn-iniciar {
+    width: 100px;
+    height: 67px;
+    top: 0;
+    left:50px;
+    font-size: 22px;
+    line-height: 20px;
+}
+
+.credits {
+    position: absolute;
+    top: 500px;
+    left:  80px;
+    text-align: center;
+    color: black;
+}
+
+/***************************************************************/
+/**                                                           **/ 
+/**                      TELA-2                               **/
+/**                                                           **/ 
+/***************************************************************/
+
+.btn-azul {
+    width: 100px;
+    height: 60px;
+    left: -5px;
+    font-size: 18px;
+    line-height: 20px;
+    padding: auto;
+}
+
+.btn-branco {
+    width: 100px;
+    height: 60px;
+    left: -10px;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+label {
+    left: 50px;
+    font-size:18px;
+}
+
+/****************************************/
+/*                                      */
+/*** posicão elementos da nova palavra **/
+/*               TELA-2                 */
+/****************************************/
+
+.palavra-nova {
+    position: relative;
+    bottom: 60px;
+    left: 50px;
+}
+
+/***************************************/
+/*                                     */
+/*** area de input da nova palavra    **/
+/*                                     */ 
+/***************************************/
+
+.text-input {
+   width: 350;
+   height: auto;
+   left: 1rem;
+   top: 180px;
+   font-size:22px;
+}
+
+/***************************************************************/
+/**                                                           **/ 
+/**                      TELA-3                               **/
+/**       Area do canvas da forca e botões                    **/ 
+/***************************************************************/
+
+.canvas {
+    background-color: green;
+    width: 300px;
+    height:400px;
+    margin-left: -10px;
+    top: 200px;
+}
+
+#forca {
+    width: 300px;
+    height:400px;
+    margin-left: 0px;
+}
+
+.botoes-div-canvas {
+    width: 100px;
+    height: 67px;
+    left: 50px;
+    bottom:  250px;
+}
+}
