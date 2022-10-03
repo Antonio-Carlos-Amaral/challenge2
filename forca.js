@@ -1,18 +1,18 @@
-//Seletores
 let tela = document.querySelector("canvas");
 let botonNuevoJuegoDesaparecido = document.getElementById("btn-novo-jogo").style.display = "none"
 let btnSairDesaparecer = document.getElementById("btn-sair").style.display = "none"
-let divAgregarPalavra = document.getElementById("adicionar-palavra").style.display = 'none';
+let divAgregarPalavra = document.getElementById("addPalavra").style.display = 'none';
 let btnNovoJogo = document.getElementById("btn-novo-jogo");
 let btnSair = document.getElementById("btn-sair");
-let btnCancelar = document.getElementById("btn-cancelar");
+let btnCancelar = document.getElementById("botaoCancelar");
 
 
 var palavras = ['ALURA', 'FORCA', 'LOGICA', 'PROGRAMA', 'DESAFIO', 'CAVALO', 'TRATOR', 'CAMINHAO', 'TELEVISAO','CELULAR','CANETA', 'PIPOCA', 'CERVEJA',
                 'CASA', 'AVIAO', 'FACULDADE', 'ELEICAO', 'RADIO', 'MUSICA', 'VIOLAO', 'BATERIA', 'GUITARRA', 'LARANJA', 'BATATA', 'GELADEIRA', 'CADERNO', 'LIVRO',
                 'REVISTA', 'FACULDADE','AVENIDA', 'CIDADE', 'APARTAMENTO', 'CONTINENTE', 'POLICIAL', 'RELOGIO', 'FRIGIDEIRA', 'GELADEIRA', 'RELOGIO','GARRAFA',
                 'ALMOFADA', 'COMPUTADOR', 'TECLADO', 'BRINQUEDO', 'FUTEBOL', 'JANELA', 'CACHACA', 'PINCEL', 'CHUVEIRO', 'TORNEIRA', 'ELEVADOR', 'ESCADA', 'COBERTOR',
-                'AMIZADE', 'CANHAO', 'METRALHADORA', 'FOGUETE', 'CORUJA', 'ELEFANTE', 'AQUARIO'];
+                'AMIZADE', 'CANHAO', 'METRALHADORA', 'FOGUETE', 'CORUJA', 'ELEFANTE', 'AQUARIO', 'COFRE', 'TELHADO', 'GATO', 'CACHORRO', "ELEICAO", "CANDIDATO",
+                "QUEIJO", "BEIJO", "MANDIOCA", "BANANA"];
 
 var tablero = document.getElementById('forca').getContext('2d');
 var palavraSecreta = "";
@@ -31,7 +31,7 @@ document.getElementById("iniciar-jogo").onclick = () => {
 }
 
 // captura o id "btn-guardar", salva a palavra adicionada
-document.getElementById("btn-salvar").onclick = () => {
+document.getElementById("botaoSalvar").onclick = () => {
   salvarPalavra();
  
 }
@@ -126,8 +126,8 @@ function verificarLetra(keyCode) {
 
 // faz com que os botões da tela de home desapareçam e mostra a tela de adicionar palavra
 function mostrarTelaAdicionarPalavra() {
-  document.getElementById("div-desaparece").style.display = 'none';
-  document.getElementById("adicionar-palavra").style.display = "block";
+  document.getElementById("ocultarBotoes").style.display = 'none';
+  document.getElementById("addPalavra").style.display = "block";
 
 }
 
@@ -144,7 +144,7 @@ function salvarPalavra() {
     
   
     // faz a tela de adicionar palavra desaparecer
-    document.getElementById("adicionar-palavra").style.display = "none";
+    document.getElementById("addPalavra").style.display = "none";
     iniciarJogo();
   }
   else{
@@ -157,7 +157,7 @@ function salvarPalavra() {
 function iniciarJogo() {
 
   // faz com que os botões da tela home desapareçam
-  document.getElementById("div-desaparece").style.display = 'none';
+  document.getElementById("ocultarBotoes").style.display = 'none';
 
   //chama a função que desenha o canva
   desenharCanvas();
@@ -203,7 +203,7 @@ function iniciarJogo() {
       alert('Você atingiu o limíte de letras incorretas')
     }
 
-  };
+  }
 }
 
 

@@ -26,11 +26,25 @@ body{
 
 /**********************************/
 /*                                */
+/*** posicão botões tela inicial **/
+/*            TELA-1              */
+/**********************************/
+
+ .botoes-t1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  left:32rem;
+ }
+
+/**********************************/
+/*                                */
 /***   botao azul TELA-1        ***/
 /*                                */
 /**********************************/
 
-.btn-iniciar {
+.botaoIniciar-t1 {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -57,13 +71,13 @@ body{
 /*                                */
 /**********************************/
 
-.btn-palavra{
+.botaoNovaPalavra {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   padding: 24px;
   position: absolute;
-  width: 280px;
+  width: 270px;
   height: 67px;
   left: 1.2rem;
   top: 28rem; 
@@ -129,7 +143,7 @@ h1 {
     position: absolute;
     width: 400px;
     height: auto;
-    left: 2.5rem;
+    left: 11.5rem;
     top: 200px;  
     font-style: normal;
     font-weight: 600;
@@ -174,9 +188,9 @@ h1 {
 /*               TELA-2           */
 /**********************************/
 
- .palavra-nova {
+ .novaPalavra {
   position: absolute;
-  left: 20rem;
+  left: 23.2rem;
  }
 
 /**********************************/
@@ -189,8 +203,7 @@ h1 {
   position: absolute;
   left: 0%;
   right: 0%;
-  top: 0%;
-  bottom: 0%;
+  bottom: -,14rem;
 }
 
 /**********************************/
@@ -221,7 +234,7 @@ h1 {
 /*             TELA-2             */
 /**********************************/
 
-.form-group {
+.agrupaLogos {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -240,7 +253,7 @@ h1 {
 /*            TELA-3              */
 /**********************************/
 
-.botoes-div {
+.botoes-t2 {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -248,7 +261,7 @@ h1 {
   position: relative;
   width: 680px;
   height: 67px;
-  right: 13px;
+  right: 10px;
   top: 490px;
  }
 
@@ -258,13 +271,13 @@ h1 {
 /*                TELA-3          */
 /**********************************/
 
-.btn-azul {
+.botaoSalvar-t2 {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   padding: 24px;
   position: static;
-  width: 328px;
+  width: 270px;
   height: 67px;
   left: -100px;
   top: 300px;
@@ -289,13 +302,13 @@ h1 {
 /*            TELA-3              */
 /**********************************/
 
-.btn-branco {
+.botaoCancelar-t2 {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   padding: 24px;
   position: static;
-  width: 328px;
+  width: 270px;
   height: 67px;
   left: 352px;
   top: 0px;
@@ -336,32 +349,51 @@ h1 {
 
 /**********************************/
 /*                                */
-/*** posicão botões tela inicial **/
-/*            TELA-1              */
-/**********************************/
-
- .botoes-home {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  position: absolute;
-  left:32rem;
- }
-
-/**********************************/
-/*                                */
 /*** posicão botões tela do jogo **/
 /*            TELA-3              */
 /**********************************/
 
-.botoes-div-canvas {
+#btn-novo-jogo {
+  width: 270px;
+  height: 67px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   position: relative;
-  left:15rem;
+  left:20rem;
   bottom: 110px;
+  background: #0A3871;
+  border-radius: 24px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 22px;
+  display: flex;
+  justify-content: center;
+  color: #FFFFFF;
 }
+
+#btn-sair {
+  width: 270px;
+  height: 67px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  position: relative;
+  left: 40rem;
+  top: -177px;
+  border: 1px solid #0A3871;
+  box-sizing: border-box;
+  border-radius: 24px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 22px;
+  display: flex;
+  justify-content: center;
+  color: #0A3871;
+}
+
 
 /**********************************/
 /*                                */
@@ -375,19 +407,20 @@ h1 {
     left:  425px;
     text-align: center;
     color: black;
+    font-weight: bold;
 }
 
-/************************************************************************************************************************************************/
-/**                                                                                                                                            **/
-/**                                                         configuração para tablet                                                           **/ 
-/**                                                                                                                                            **/
-/************************************************************************************************************************************************/
-/***                                                 Portrait tablet to landscape and desktop                                                 ***/
-/************************************************************************************************************************************************/
+/****************************************************************/
+/**                                                            **/
+/**                configuração para tablet                    **/ 
+/**                                                            **/
+/****************************************************************/
+/***          Portrait tablet to landscape and desktop        ***/
+/****************************************************************/
 
 @media (min-width: 481px) and (max-width: 796px) {
 
-/***************************************************************/
+/****************************************************************
 /**                                                           **/ 
 /**                      TELA-1                               **/
 /**                                                           **/ 
@@ -432,7 +465,7 @@ h1 {
     color: black;
   }
 
-/***************************************************************/
+/****************************************************************
 /**                                                           **/ 
 /**                      TELA-2                               **/
 /**                                                           **/ 
@@ -467,9 +500,9 @@ h1 {
 /****************************************/
 
  .palavra-nova {
-    position: relative;
-    bottom: 60px;
-    left: 100px;
+  position: relative;
+ bottom: 60px;
+  left: 100px;
  }
 
 
@@ -480,180 +513,137 @@ h1 {
 /*                                     */ 
 /***************************************/
 
-.text-input {
-    width: 550;
-    height: auto;
-    left: 2rem;
-    top: 180px;
-    font-size:22px;
-}
-
-/***************************************************************/
-/**                                                           **/ 
-/**                      TELA-3                               **/
-/**       Area do canvas da forca e botões                    **/ 
-/***************************************************************/
-
-.canvas {
-    width: 600px;
-    height:700px;
-    margin-left: -10px;
-    top: 200px;
-}
-
-#forca {
-    width: 600px;
-    height:700px;
-    margin-left: 0px;
-}
-
-.botoes-div-canvas {
-    width: 680px;
-    height: 67px;
-    left: 100px;
-    bottom: 250px;
-}
-
-}
-
-/************************************************************************************************************************************************/
-/**                                                                                                                                            **/
-/**                                                         configuração para smartfone                                                        **/ 
-/**                                                                                                                                            **/
-/************************************************************************************************************************************************/
-/***                                                      Portrait & landscape para smartfone                                                 ***/
-/************************************************************************************************************************************************/
-//**@media (min-width: 320px) and (max-width: 480px) {    **//
-
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {    
-
-
- //** @media screen and (max-width:320px) { **//
-
-body {
-    min-width: 320px;
-    min-height: 480px;
-}
-  
-/***************************************************************/
-/**                                                           **/ 
-/**                      TELA-1                               **/
-/**                                                           **/ 
-/***************************************************************/
-
-.logo {
-    left: 40px;
-    right: 37.43%;
-    top: 40px;
-    bottom: 0%;
-    width: 50px;
-    height: 50px;
-} 
-
-.btn-palavra {
-    position: relative;
-    width: 100px;
-    height: 67px;
-    top: 7rem;
-    left:50px;
-    font-size: 22px;
-}
-  
-.btn-iniciar {
-    width: 100px;
-    height: 67px;
-    top: 0;
-    left:50px;
-    font-size: 22px;
-    line-height: 20px;
-}
-
-.credits {
-    position: absolute;
-    top: 500px;
-    left:  80px;
-    text-align: center;
-    color: black;
-}
-
-/***************************************************************/
-/**                                                           **/ 
-/**                      TELA-2                               **/
-/**                                                           **/ 
-/***************************************************************/
-
-.btn-azul {
-    width: 100px;
-    height: 60px;
-    left: -5px;
-    font-size: 18px;
-    line-height: 20px;
-    padding: auto;
-}
-
-.btn-branco {
-    width: 100px;
-    height: 60px;
-    left: -10px;
-    font-size: 18px;
-    line-height: 20px;
-}
-
-label {
-    left: 50px;
-    font-size:18px;
-}
-
-/****************************************/
-/*                                      */
-/*** posicão elementos da nova palavra **/
-/*               TELA-2                 */
-/****************************************/
-
-.palavra-nova {
-    position: relative;
-    bottom: 60px;
-    left: 50px;
-}
-
-/***************************************/
-/*                                     */
-/*** area de input da nova palavra    **/
-/*                                     */ 
-/***************************************/
-
-.text-input {
-   width: 350;
+  .text-input {
+   width: 550;
    height: auto;
-   left: 1rem;
+   left: 2rem;
    top: 180px;
    font-size:22px;
 }
 
-/***************************************************************/
+/****************************************************************
 /**                                                           **/ 
 /**                      TELA-3                               **/
 /**       Area do canvas da forca e botões                    **/ 
 /***************************************************************/
 
 .canvas {
-    background-color: green;
-    width: 300px;
-    height:400px;
-    margin-left: -10px;
-    top: 200px;
+  width: 600px;
+  height:700px;
+  margin-left: -10px;
+  top: 200px;
 }
 
 #forca {
-    width: 300px;
-    height:400px;
-    margin-left: 0px;
+  width: 600px;
+  height:700px;
+  margin-left: 0px;
 }
 
-.botoes-div-canvas {
+.botoes-div-canvas{
+  width: 680px;
+  height: 67px;
+  left: 100px;
+  bottom:  250px;
+}
+}
+
+
+
+
+/****************************************************************/
+/**                                                            **/
+/**                     configuração para Smartfones           **/ 
+/**                                                            **/
+/****************************************************************/
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  body{
+    min-width: 320px;
+    min-height: 4807px;
+  }
+  .logo{
+    left: 440px;
+    right: 37.43%;
+    top: 40px;
+    bottom: 0px;
+    width: 50px;
+    height: 50px;
+  } 
+  .botoes-homexxxxxxxxxxxxxxxxxx{
+    top: 16rem;
+    left: 4.2rem;
+  }
+  .btn-palavra{
+    position: relative;
     width: 100px;
     height: 67px;
     left: 50px;
-    bottom:  250px;
-}
-}
+    top: 5r7m;
+    font-size: 16px;
+    
+  }
+  .btn-iniciar{
+  width: 100px;
+  height: 67px;
+  left: 50px;
+  top: 7rem;
+  font-size: 22px;
+  }
+  .btn-azul{
+    width: 100px;
+    height: 67px;
+    left: -5;
+    font-size: 18px;
+    line-height: 20px;    
+  }
+  .btn-branco{
+    width: 100px;
+    height: 67px;
+    left: -10;
+    font-size: 18px;
+    line-height: 20px;    
+  }
+  label {
+    left: 50px;
+    font-size:18px;
+   }
+
+   
+   
+   .text-input { 
+    width: 350px;
+    height: auto;
+    left: 1rem;
+    top: 180px;
+    font-size:22px;
+     }
+    .palavra-nova{
+      top:0.4rem;
+      left: 0.1rem;
+    }
+     .img-alerta{
+      left: 1rem;
+      right: 0%;
+      top: 0%;
+      bottom: 0%;   
+    }
+    .canvas{
+      margin-left: -10px;
+      width: 300px;
+      height:400px;
+      top: 200px;
+    }
+    .botoes-div-canvas{
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+    
+      position: absolute;
+      width: 100px;
+      height: 67px;
+      left: 50px;
+      top: 760px;
+     }
+ }

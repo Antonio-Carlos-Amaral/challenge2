@@ -1,3 +1,7 @@
+var cabecaFeita 
+
+
+
 function desenharCanvas() {
   tablero.lineWidth=4
   tablero.lineCap="round"
@@ -8,6 +12,11 @@ function desenharCanvas() {
   tablero.beginPath();
 // tablero.moveTo(650,500)
 // tablero.lineTo(900,500)
+
+
+
+cabecaFeita = "nao"
+
 
 
 // posiciona a base da forca
@@ -72,8 +81,7 @@ function desenharForca(pontos) {
   tablero.lineCap="round"
   tablero.lineJoin="round"
   tablero.strokeStyle = "#0A3871"
-  if(pontos===8){
-  //poste lateral
+  if(pontos===8){//poste lateral
   tablero.moveTo(700,400)
   tablero.lineTo(700,50)
   }
@@ -91,6 +99,7 @@ function desenharForca(pontos) {
   tablero.arc(850,137,40,0, 2*3.14)
   tablero.fillStyle= "#F3F5FC"
   tablero.fill();
+  cabecaFeita = "sim";
   }
   if(pontos===4){//para corpo
   tablero.moveTo(850,275)
@@ -123,12 +132,9 @@ function exibirDerrota() {
   tablero.lineJoin="round"
   tablero.fillStyle="red"
 
-
   tablero.beginPath();
   tablero.arc(838,134,8,0, 2*3.14)
   tablero.fill();
-
-
 
   tablero.beginPath();
   tablero.arc(862,134,8,0, 2*3.14)
@@ -138,43 +144,60 @@ function exibirDerrota() {
   tablero.arc(850,161,10,0, 2*3.14)
   tablero.fill();
 
-
-tablero.fillStyle= "#F3F5FC"
+  tablero.fillStyle= "#F3F5FC"
   tablero.beginPath();
   tablero.arc(850,165,9,0, 2*3.14)
   tablero.fill();
 
-
-
-
-
-
-tablero.fillStyle= "red"
-
+  tablero.fillStyle= "darkblue"
   tablero.fillText("Fim de jogo!",930,320)
   tablero.fillText("Morreu",973,370)
 
-/////////////////////////////////////////////////
-     tablero.font = 'bold 20px Inter';
-
+  tablero.font = 'bold 20px Inter';
 
   tablero.lineWidth=2
-  tablero.fillStyle="#0A3871"
+  tablero.fillStyle="black"
+  tablero.font = 'bold 20px Inter';
   tablero.fillText("A palavra éra: ",660,630)
-tablero.fillText(palavraSecreta,790,630)
+  tablero.fillText(palavraSecreta,790,630)
 
-//////////////////////////////////////////////  
 }
 
 function exibirVitoria() {
+ 
+if (cabecaFeita == "sim") {
+
+  tablero.beginPath();
+  tablero.arc(838,134,8,0, 2*3.14)
+  tablero.fill();
+
+  tablero.beginPath();
+  tablero.arc(862,134,8,0, 2*3.14)
+  tablero.fill();
+
+  tablero.beginPath();
+  tablero.arc(850,161,10,0, 2*3.14)
+  tablero.fill();
+
+  tablero.fillStyle= "#F3F5FC"
+  tablero.beginPath();
+  tablero.arc(850,156,9,0, 2*3.14)
+  tablero.fill();
+  cabecaFeita = "nao";
+
+}
+
+else
+
   tablero.font = 'bold 42px Inter';
   tablero.lineWidth=3
   tablero.lineCap="round"
   tablero.lineJoin="round"
   tablero.fillStyle="darkblue"
   tablero.fillText("Ganhou,",950,320)
-  tablero.fillText("Parabéns!",930,360)
-  setTimeout( recarregar , 5000)
+  tablero.fillText("Parabéns",930,360)
+
+  setTimeout( recarregar , 15000)
 }   
 
 function recarregar(){
